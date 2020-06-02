@@ -12,7 +12,7 @@ public class SnackController {
 	}
 	
 	public String saveData(String kind,String name,String flavor,int numOf,int price) {
-		String result = "ÀúÀå ¿Ï·á";
+		String result = "ì €ì¥ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤";
 		s.setFlavor(flavor);
 		s.setKind(kind);
 		s.setName(name);
