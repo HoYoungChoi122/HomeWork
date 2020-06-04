@@ -1,4 +1,4 @@
-package com.kh.practice.student.veiw;
+package com.kh.practice.student.view;
 
 import com.kh.practice.student.controller.StudentController;
 import com.kh.practice.student.model.vo.Student;
@@ -6,42 +6,42 @@ import com.kh.practice.student.model.vo.Student;
 public class StudentMenu {
 
 	private StudentController ssm = new StudentController();
-	//°´Ã¼»ı¼º°ú µ¿½Ã¿¡ ÃÊ±âÈ­ ( ÃÊ±âÈ­ ³»¿ëÀº StudentController() »ı¼ºÀÚ Âü°í )
+	//ê°ì²´ìƒì„±ê³¼ ë™ì‹œì— ì´ˆê¸°í™” ( ì´ˆê¸°í™” ë‚´ìš©ì€ StudentController() ìƒì„±ì ì°¸ê³  )
 	
 	public StudentMenu() {
 
 		Student[] print = ssm.printStudent();
-		//StudentÅ¬·¡½º¿¡  sArr°ªÀ» ³ÖÀ»°ÍÀ» È£ÃâÇØ¿Í¼­ print¶ó´Â º¯¼ö¿¡ ´ëÀÔÇÔ
+		//Studentí´ë˜ìŠ¤ì—  sArrê°’ì„ ë„£ì„ê²ƒì„ í˜¸ì¶œí•´ì™€ì„œ printë¼ëŠ” ë³€ìˆ˜ì— ëŒ€ì…í•¨
 		double avg[] = ssm.avgScore();
-		//´õºí ¹è¿­À» ¼±¾ğÇÏ¿© Æò±Õ°ª°ú ÇÕ°èÁ¡¼ö¸¦ ³ÖÀ½
+		//ë”ë¸” ë°°ì—´ì„ ì„ ì–¸í•˜ì—¬ í‰ê· ê°’ê³¼ í•©ê³„ì ìˆ˜ë¥¼ ë„£ìŒ
 
-		System.out.println("========== ÇĞ»ı Á¤º¸ Ãâ·Â =========");
+		System.out.println("========== í•™ìƒ ì •ë³´ ì¶œë ¥ =========");
 		for (int a = 0; a < print.length; a++) {
-			//Student Å¬·¡½ºÀÇ Á¤º¸¸¦ ºÒ·¯¿È 
+			//Student í´ë˜ìŠ¤ì˜ ì •ë³´ë¥¼ ë¶ˆëŸ¬ì˜´ 
 			System.out.println(print[a].inform()); 
 		}
-		System.out.println("========== ÇĞ»ı¼ºÀû Ãâ·Â =========");
+		System.out.println("========== í•™ìƒì„±ì  ì¶œë ¥ =========");
 		for (int a = 0; a < avg.length; a++) {
 			if (a == 0) {
-				// double·Î ¹è¿­À» ¼±¾ğÇß°í, avg[0]¿¡´Â ÇÕ°èÁ¡¼ö°¡ ´ã°ÜÁ® ÀÖ±â¿¡ forÀ¸·Î Ãâ·ÂÇÔ
-				// for¹®°ú if¹®À» ¾È¾²°í avg[a]¿¡ °ª¸¸ ´ã¾Æ¼­ Ãâ·ÂÇØµµ ¹«¹æÇÔ
-				System.out.println("ÇĞ»ı Á¾ÇÕ Á¡¼ö : " + (int) avg[a]);
+				// doubleë¡œ ë°°ì—´ì„ ì„ ì–¸í–ˆê³ , avg[0]ì—ëŠ” í•©ê³„ì ìˆ˜ê°€ ë‹´ê²¨ì ¸ ìˆê¸°ì— forìœ¼ë¡œ ì¶œë ¥í•¨
+				// forë¬¸ê³¼ ifë¬¸ì„ ì•ˆì“°ê³  avg[a]ì— ê°’ë§Œ ë‹´ì•„ì„œ ì¶œë ¥í•´ë„ ë¬´ë°©í•¨
+				System.out.println("í•™ìƒ ì¢…í•© ì ìˆ˜ : " + (int) avg[a]);
 			} else {
-				System.out.println("ÇĞ»ı Á¾ÇÕ Á¡¼ö : " + avg[a]);
+				System.out.println("í•™ìƒ ì¢…í•© ì ìˆ˜ : " + avg[a]);
 			}
 
 		}
-		System.out.println("==========¼ºÀû °á°ú Ãâ·Â =========");
+		System.out.println("==========ì„±ì  ê²°ê³¼ ì¶œë ¥ =========");
 		for (int a = 0; a < print.length; a++) {
 			if (print[a].getScore() >= Student.CUT_LINE) {
-				// ÄÆ¶óÀÎ ´Ş¼º ½Ã Ãâ·Â
-				// Student Å¬·¡½ºÀÇ ÀÌ¸§À» ºÒ·¯¿È
-				System.out.println(print[a].getName() + "ÇĞ»ıÀº Åë°úÀÔ´Ï´Ù.");
+				// ì»·ë¼ì¸ ë‹¬ì„± ì‹œ ì¶œë ¥
+				// Student í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ë¶ˆëŸ¬ì˜´
+				System.out.println(print[a].getName() + "í•™ìƒì€ í†µê³¼ì…ë‹ˆë‹¤.");
 
 			} else {
-				// ÄÆ¶óÀÎ ¹Ì´Ş ½Ã Ãâ·Â
-				// Student Å¬·¡½ºÀÇ ÀÌ¸§À» ºÒ·¯¿È
-				System.out.println(print[a].getName() + "ÇĞ»ıÀº Àç½ÃÇè ´ë»óÀÔ´Ï´Ù.");
+				// ì»·ë¼ì¸ ë¯¸ë‹¬ ì‹œ ì¶œë ¥
+				// Student í´ë˜ìŠ¤ì˜ ì´ë¦„ì„ ë¶ˆëŸ¬ì˜´
+				System.out.println(print[a].getName() + "í•™ìƒì€ ì¬ì‹œí—˜ ëŒ€ìƒì…ë‹ˆë‹¤.");
 			}
 		}
 
